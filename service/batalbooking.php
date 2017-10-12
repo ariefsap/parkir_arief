@@ -3,11 +3,9 @@
 
     $idBook = $_POST["id_book"];
 
-
     $response = new stdClass();
 
-    
-    
+        
     $query = mysql_query("delete from booking where id_book = '$idBook'");
 
     if ($query){
