@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Okt 2017 pada 15.01
+-- Generation Time: 12 Okt 2017 pada 08.39
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -31,8 +31,16 @@ CREATE TABLE `booking` (
   `id_pengguna` int(11) NOT NULL,
   `id_mall` int(11) NOT NULL,
   `id_kendaraan` int(11) NOT NULL,
-  `waktu_book` varchar(50) NOT NULL
+  `waktu_book` varchar(50) NOT NULL,
+  `status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `booking`
+--
+
+INSERT INTO `booking` (`id_book`, `id_pengguna`, `id_mall`, `id_kendaraan`, `waktu_book`, `status`) VALUES
+(1, 1, 1, 1, '12.00', 1);
 
 -- --------------------------------------------------------
 
@@ -93,6 +101,13 @@ CREATE TABLE `mobil_pengguna` (
   `warna` varchar(50) NOT NULL,
   `plat_no` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `mobil_pengguna`
+--
+
+INSERT INTO `mobil_pengguna` (`id_mobil`, `id_pengguna`, `merek`, `warna`, `plat_no`) VALUES
+(1, 1, 'Toyota', 'Hitam', 'R 2112 A');
 
 -- --------------------------------------------------------
 
@@ -165,7 +180,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `jenis_pengguna`
 --
@@ -180,7 +195,7 @@ ALTER TABLE `mall`
 -- AUTO_INCREMENT for table `mobil_pengguna`
 --
 ALTER TABLE `mobil_pengguna`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
