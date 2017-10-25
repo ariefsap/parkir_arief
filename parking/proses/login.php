@@ -14,9 +14,9 @@
     if($sql){
         $row = mysql_fetch_array($sql);
         if (mysql_num_rows($sql) > 0){
-            echo "berhasil login";
+            header("location:../index.php");
         } else {
-            echo "gagal login";
+            header("location:../login.php?err=1");
         }
     }else{
         echo "terjadi kesalahan";
