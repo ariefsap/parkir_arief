@@ -22,9 +22,9 @@
                                         '$deskripsi', '$url')") or die(mysql_error());
 
     if($query){
-        echo "berhasil tambah mall"; 
+         header("location:../lokasi.php");
     }else{
-        echo "gagal tambah mall";
+        header("location:../tambahmall.php?err=1");
     }
 
     mysql_close();

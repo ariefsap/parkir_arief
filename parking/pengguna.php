@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+    include 'inc/koneksi.php';
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -25,81 +27,88 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
 				<a class="navbar-brand" href="#"><span>Parking</span>Solution</a>
-				
 		</div><!-- /.container-fluid -->
-	</nav>
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="file:///C:/xampp/htdocs/parking/foto.JPG" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Arief S. Adipratama</div>
 
-			</div>
-			<div class="clear"></div>
-		</div>
-		
-		</form>
-		<ul class="nav menu">
-			<li><a href="index.html"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
-			<li><a href="pengguna.html"><em class="fa fa-user">&nbsp;</em> Pengguna</a></li>
-			<li><a href="petugas.html"><em class="fa fa-users">&nbsp;</em> Petugas</a></li>
-			<li class="active"><a href="lokasi.html"><em class="fa fa-map-marker">&nbsp;</em> Lokasi</a></li>
-			<li><a href="history.html"><em class="fa fa-book">&nbsp;</em> History</a></li>
-				
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-					</a></li>
-				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Keluar</a></li>
-		</ul>
-	</div><!--/.sidebar-->
-		
+
+
+	</nav>
+	
+		<?php
+			include "inc/menu.php";
+		?>
+
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#">
-					<em class="fa fa-map-marker"></em>
+					<em class="fa fa-user"></em>
 				</a></li>
-				<li class="active">Lokasi</li>
+				<li class="active">Pengguna</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Data Lokasi Parkir</h1>
-			</div>
-		</div><!--/.row-->
-				
-				<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						tinggal Diisi
-						
-						</div>
-					
-				</div>
+				<h1 class="page-header">Data Pengguna</h1>
 			</div>
 		</div><!--/.row-->
 
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Table Pengguna
+					</div>
+					<table border="1px" class="table">
+				            <thead>
+				                <th>No</th>
+				                <th>Nama Pengguna</th>
+				                <th>Alamat</th>
+				                <th>NO. HP</th>
+				                <th>Username</th>
+				                <th>Foto</th>
+				            </thead>
+				            <tbody>
+				                <?php
+				                    $query = "SELECT * FROM pengguna where id_jenis_pengguna = 2";
+				                    $sql = mysql_query($query);
+
+				                    if($sql){
+				                        if (mysql_num_rows($sql) > 0){
+				                            $no = 1;
+				                            while($row = mysql_fetch_array($sql)){?>
+				                               <tr>
+				                                    <td><?php echo $no ?></th>
+				                                    <td><?php echo $row['nama_pengguna'];?></td>
+				                                    <td><?php echo $row['alamat'];?></td>
+				                                    <td><?php echo $row['no_hp'];?></td>
+				                                    <td><?php echo $row['username'];?></td>
+				                                    <td><?php echo $row['foto'];?></td>
+				                               </tr>
+				                            <?php
+				                                $no++;
+				                            }
+				                        } else {
+				                            echo "tidak ada data";
+				                        }
+				                    }else{
+				                        echo "terjadi kesalahan";
+				                    }
+
+				                    mysql_close();
+				                ?>
+				            </tbody>
+				        </table>
+				</div>
+			</div>
+		</div><!--/.row-->
 			<div class="col-sm-12">
 				<p class="back-link">Parking Solution by Arief S. Adipratama</a></p>
 			</div>
-			</div><!-- /.col-->
-			
-		</div><!-- /.row -->
-	</div><!--/.main-->
-	
+		</div><!--/.row-->
+	</div>	<!--/.main-->
+	  
+
 <script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
