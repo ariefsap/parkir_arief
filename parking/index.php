@@ -28,40 +28,11 @@
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="file:///C:/xampp/htdocs/parking/foto.JPG" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Arief S. Adipratama</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="divider"></div>
-			
-			<ul class="nav menu">
-			<li class="active"><a href="index.html"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
-			<li><a href="pengguna.html"><em class="fa fa-user">&nbsp;</em> Pengguna</a></li>
-			<li><a href="petugas.html"><em class="fa fa-users">&nbsp;</em> Petugas</a></li>
-			<li><a href="lokasi.html"><em class="fa fa-map-marker">&nbsp;</em> Lokasi</a></li>
-			<li><a href="history.html"><em class="fa fa-book">&nbsp;</em> History</a></li>
-				
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-					</a></li>
-				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-		</ul>
-	</div><!--/.sidebar-->
+	
+		
+		<?php
+			include "inc/menu.php";
+		?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">

@@ -9,11 +9,12 @@
     }
 
     $query = "SELECT * FROM pengguna WHERE username='$username' AND password='$password'";
+    
     $sql = mysql_query($query);
-
     if($sql){
         $row = mysql_fetch_array($sql);
         if (mysql_num_rows($sql) > 0){
+
             header("location:../index.php");
         } else {
             header("location:../login.php?err=1");

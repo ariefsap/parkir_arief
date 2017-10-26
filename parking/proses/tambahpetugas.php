@@ -17,9 +17,9 @@
                                 VALUES('$nama_pengguna', '$alamat', '$no_hp', '$username', '$password', 3)") or die(mysql_error());
 
     if($query){
-        echo "berhasil tambah petugas"; 
+        header("location:../petugas.php");
     }else{
-        echo "gagal tambah petugas";
+        header("location:../tambahpetugas.php?err=1");
     }
 
     mysql_close();
