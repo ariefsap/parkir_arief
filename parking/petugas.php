@@ -57,10 +57,16 @@
 					<div class="panel-heading">
 						
 						<a href="tambahpetugas.php">
+<<<<<<< HEAD
 							<button class="btn btn-default"> <span class="fa fa-plus-square-o"></span> TAMBAH PETUGAS</button>
 						</a>	
 					</div>
 					<div class="panel-body">
+=======
+							<button class="btn btn-primary">TAMBAH PETUGAS</button>
+						</a>	
+					</div>
+>>>>>>> master
 					<table border="1px" class="table">
 				            <thead>
 				                <th>No</th>
@@ -87,10 +93,14 @@
 				                                    <td><?php echo $row['no_hp'];?></td>
 				                                    <td><?php echo $row['username'];?></td>
 				                                    <td><?php echo $row['foto'];?></td>
+<<<<<<< HEAD
 				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span>Edit</div>
 				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
 				                                	</span>Delete</div></td>
+=======
+				                                    <td><div class="fa fa-pencil-square-o"></div> | <div class="fa fa-trash"></div></td>
+>>>>>>> master
 				                               </tr>
 				                            <?php
 				                                $no++;
@@ -106,7 +116,10 @@
 				                ?>
 				            </tbody>
 				        </table>
+<<<<<<< HEAD
 				    </div>
+=======
+>>>>>>> master
 				</div>
 			</div>
 		</div><!--/.row-->

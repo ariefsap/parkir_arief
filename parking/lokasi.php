@@ -54,11 +54,20 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
+<<<<<<< HEAD
 						<a href="tambahmall.php">
 							<div class="btn btn-default btn"> <span class="fa fa-plus-square-o"></span> TAMBAH LOKASI</div>
 						</a>	
 						</div>
 						<div class="panel-body">
+=======
+						
+						<a href="tambahmall.php">
+							<button class="btn btn-primary">TAMBAH LOKASI</button>
+						</a>	
+						
+						</div>
+>>>>>>> master
 						<table border="1px" class="table">
 				            <thead>
 				                <th>No</th>
@@ -91,10 +100,14 @@
 				                                    <td><?php echo $row['jam_buka'];?></td>
 				                                    <td><?php echo $row['jam_tutup'];?></td>
 				                                    <td><?php echo $row['deskripsi'];?></td>
+<<<<<<< HEAD
 				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span> Edit</div>
 				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
 				                                	</span>Delete</div></td>
+=======
+				                                    <td><div class="fa fa-pencil-square-o"></div> | <div class="fa fa-trash"></div></td>
+>>>>>>> master
 				                               </tr>
 				                            <?php
 				                                $no++;
@@ -110,7 +123,10 @@
 				                ?>
 				            </tbody>
 				        </table>
+<<<<<<< HEAD
 				    </div>
+=======
+>>>>>>> master
 				</div>
 			</div>
 		</div><!--/.row-->
