@@ -10,7 +10,7 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -34,7 +34,7 @@
 	</nav>
 	<?php
 			include "inc/menu.php";
-		?>		
+		?>
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -44,7 +44,7 @@
 				<li class="active">Petugas</li>
 			</ol>
 		</div><!--/.row-->
-		
+
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Data Petugas</h1>
@@ -55,18 +55,12 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						
+
 						<a href="tambahpetugas.php">
-<<<<<<< HEAD
 							<button class="btn btn-default"> <span class="fa fa-plus-square-o"></span> TAMBAH PETUGAS</button>
-						</a>	
+						</a>
 					</div>
 					<div class="panel-body">
-=======
-							<button class="btn btn-primary">TAMBAH PETUGAS</button>
-						</a>	
-					</div>
->>>>>>> master
 					<table border="1px" class="table">
 				            <thead>
 				                <th>No</th>
@@ -93,14 +87,10 @@
 				                                    <td><?php echo $row['no_hp'];?></td>
 				                                    <td><?php echo $row['username'];?></td>
 				                                    <td><?php echo $row['foto'];?></td>
-<<<<<<< HEAD
 				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span>Edit</div>
 				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
 				                                	</span>Delete</div></td>
-=======
-				                                    <td><div class="fa fa-pencil-square-o"></div> | <div class="fa fa-trash"></div></td>
->>>>>>> master
 				                               </tr>
 				                            <?php
 				                                $no++;
@@ -116,10 +106,7 @@
 				                ?>
 				            </tbody>
 				        </table>
-<<<<<<< HEAD
 				    </div>
-=======
->>>>>>> master
 				</div>
 			</div>
 		</div><!--/.row-->
@@ -128,7 +115,7 @@
 			</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->
-	  
+
 
 <script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -138,6 +125,6 @@
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
-	
+
 </body>
 </html>
