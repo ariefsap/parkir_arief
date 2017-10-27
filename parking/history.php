@@ -53,21 +53,38 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
+<<<<<<< HEAD
 						<table border="1px" class="table">
 					            <thead>
 					                <th>No</th>
 					                <th>ID Booking</th>
 					                <th>Nama Pengguna</th>
 					                <th>Nama Lokasi</th>
+=======
+					<div class="panel-heading">
+						Tabel History
+						
+						</div>
+						<table border="1px" class="table">
+					            <thead>
+					                <th>No</th>
+					                <th>Id Booking</th>
+					                <th>Pengguna</th>
+					                <th>Nama MMall</th>
+>>>>>>> master
 					                <th>Nomor Polisi</th>
 					                <th>Waktu Booking</th>
 					                <th>Status</th>
 					            </thead>
 					            <tbody>
 					                <?php
+<<<<<<< HEAD
 					                    $query = "SELECT * FROM booking JOIN pengguna ON booking.id_pengguna = pengguna.id_pengguna 
 					                    JOIN mall ON booking.id_mall = mall.id_mall JOIN mobil_pengguna ON 
 					                    booking.id_kendaraan = mobil_pengguna.id_mobil";
+=======
+					                    $query = "SELECT * FROM booking JOIN pengguna ON booking.id_pengguna = pengguna.id_pengguna JOIN mall ON booking.id_mall = mall.id_mall JOIN mobil_pengguna ON booking.id_kendaraan = mobil_pengguna.id_mobil";
+>>>>>>> master
 					                    $sql = mysql_query($query);
 
 					                    if($sql){
@@ -84,7 +101,11 @@
 					                                    <td><?php
 					                                            $tmpStatus = "";
 					                                            if($row['status'] == 0){
+<<<<<<< HEAD
 					                                                $tmpStatus = "SUKSES";
+=======
+					                                                $tmpStatus = "selesai";
+>>>>>>> master
 					                                            }else if($row['status'] == 1){
 					                                                $tmpStatus = "proses";
 					                                            }else{
