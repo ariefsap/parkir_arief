@@ -9,18 +9,14 @@
 			<div class="clear"></div>
 		</div>
 	<div class="divider"></div>
-			
+
 			<ul class="nav menu">
-<<<<<<< HEAD
-			<li><a href="index.php"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
-=======
 			<li class="active"><a href="index.php"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
->>>>>>> master
 			<li><a href="pengguna.php"><em class="fa fa-user">&nbsp;</em> Pengguna</a></li>
 			<li><a href="petugas.php"><em class="fa fa-users">&nbsp;</em> Petugas</a></li>
 			<li><a href="lokasi.php"><em class="fa fa-map-marker">&nbsp;</em> Lokasi</a></li>
 			<li><a href="history.php"><em class="fa fa-book">&nbsp;</em> History</a></li>
-				
+
 				<ul class="children collapse" id="sub-item-1">
 					<li><a class="" href="#">
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1

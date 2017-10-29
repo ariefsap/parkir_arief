@@ -10,7 +10,7 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -33,7 +33,7 @@
 	<?php
 			include "inc/menu.php";
 	?>
-		
+
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -43,7 +43,7 @@
 				<li class="active">History</li>
 			</ol>
 		</div><!--/.row-->
-		
+
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Data Booking</h1>
@@ -53,17 +53,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-<<<<<<< HEAD
-						<table border="1px" class="table">
-					            <thead>
-					                <th>No</th>
-					                <th>ID Booking</th>
-					                <th>Nama Pengguna</th>
-					                <th>Nama Lokasi</th>
-=======
 					<div class="panel-heading">
 						Tabel History
-						
 						</div>
 						<table border="1px" class="table">
 					            <thead>
@@ -71,20 +62,16 @@
 					                <th>Id Booking</th>
 					                <th>Pengguna</th>
 					                <th>Nama MMall</th>
->>>>>>> master
 					                <th>Nomor Polisi</th>
 					                <th>Waktu Booking</th>
 					                <th>Status</th>
 					            </thead>
 					            <tbody>
 					                <?php
-<<<<<<< HEAD
-					                    $query = "SELECT * FROM booking JOIN pengguna ON booking.id_pengguna = pengguna.id_pengguna 
-					                    JOIN mall ON booking.id_mall = mall.id_mall JOIN mobil_pengguna ON 
+					                    $query = "SELECT * FROM booking JOIN pengguna ON booking.id_pengguna = pengguna.id_pengguna
+					                    JOIN mall ON booking.id_mall = mall.id_mall JOIN mobil_pengguna ON
 					                    booking.id_kendaraan = mobil_pengguna.id_mobil";
-=======
-					                    $query = "SELECT * FROM booking JOIN pengguna ON booking.id_pengguna = pengguna.id_pengguna JOIN mall ON booking.id_mall = mall.id_mall JOIN mobil_pengguna ON booking.id_kendaraan = mobil_pengguna.id_mobil";
->>>>>>> master
+
 					                    $sql = mysql_query($query);
 
 					                    if($sql){
@@ -101,11 +88,7 @@
 					                                    <td><?php
 					                                            $tmpStatus = "";
 					                                            if($row['status'] == 0){
-<<<<<<< HEAD
 					                                                $tmpStatus = "SUKSES";
-=======
-					                                                $tmpStatus = "selesai";
->>>>>>> master
 					                                            }else if($row['status'] == 1){
 					                                                $tmpStatus = "proses";
 					                                            }else{
@@ -138,8 +121,8 @@
 				<p class="back-link">Parking Solution by Arief S. Adipratama</a></p>
 			</div>
 	</div>
-				
-	
+
+
 		<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
@@ -148,6 +131,6 @@
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
-	
+
 </body>
 </html>
