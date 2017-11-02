@@ -1,5 +1,10 @@
 <?php
+    session_start();
     include 'inc/koneksi.php';
+
+  	if(!$_SESSION['login']){
+  		header("location: login.php");
+  	}
 ?>
 <html>
 <head>

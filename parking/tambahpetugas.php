@@ -34,9 +34,11 @@
 					<span class="icon-bar"></span></button>
 				<a class="navbar-brand" href="#"><span>Parking</span>Solution</a>
 		</div><!-- /.container-fluid -->
-	</nav>
 
-		<?php
+
+
+	</nav>
+	<?php
 			include "inc/menu.php";
 		?>
 
@@ -46,67 +48,52 @@
 				<li><a href="#">
 					<em class="fa fa-user"></em>
 				</a></li>
-				<li class="active">Pengguna</li>
+				<li class="active">Petugas</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Data Pengguna</h1>
+				<h1 class="page-header">Tambah Petugas</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						Table Pengguna
-					</div>
-					<table border="1px" class="table">
-				            <thead>
-				                <th>No</th>
-				                <th>Nama Pengguna</th>
-				                <th>Alamat</th>
-				                <th>NO. HP</th>
-				                <th>Username</th>
-				                <th>Foto</th>
-				                <th>Aksi</th>
-				            </thead>
-				            <tbody>
-				                <?php
-				                    $query = "SELECT * FROM pengguna where id_jenis_pengguna = 2";
-				                    $sql = mysql_query($query);
 
-				                    if($sql){
-				                        if (mysql_num_rows($sql) > 0){
-				                            $no = 1;
-				                            while($row = mysql_fetch_array($sql)){?>
-				                               <tr>
-				                                    <td><?php echo $no ?></th>
-				                                    <td><?php echo $row['nama_pengguna'];?></td>
-				                                    <td><?php echo $row['alamat'];?></td>
-				                                    <td><?php echo $row['no_hp'];?></td>
-				                                    <td><?php echo $row['username'];?></td>
-				                                    <td><?php echo $row['foto'];?></td>
-				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
-				                                    </span>Edit</div>
-				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
-				                                	</span>Delete</div></td>
-				                               </tr>
-				                            <?php
-				                                $no++;
-				                            }
-				                        } else {
-				                            echo "tidak ada data";
-				                        }
-				                    }else{
-				                        echo "terjadi kesalahan";
-				                    }
 
-				                    mysql_close();
-				                ?>
-				            </tbody>
-				        </table>
+					<div class="panel-body">
+					<form action="proses/tambahpetugas.php" method="POST">
+
+						<div class="form-group">
+							<label class="col-form-label">Nama Lengkap</label>
+							<input type="text" name="nama_pengguna" placeholder="Nama" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Alamat</label>
+							<input type="text" name="alamat" placeholder="Alamat" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">No. HP</label>
+							<input type="text" name="no_hp" placeholder="No. HP" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Username</label>
+							<input type="text" name="username" placeholder="Username" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Password</label>
+							<input type="text" name="password" placeholder="Password" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Foto</label>
+							<input type="file" name="foto" />
+						</div>
+						<button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+					</form>
+				</div>
+				</div>
 				</div>
 			</div>
 		</div><!--/.row-->

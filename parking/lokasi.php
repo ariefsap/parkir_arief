@@ -1,5 +1,10 @@
 <?php
+    session_start();
     include 'inc/koneksi.php';
+
+  	if(!$_SESSION['login']){
+  		header("location: login.php");
+  	}
 ?>
 <html>
 <head>
@@ -92,8 +97,9 @@
 				                                    <td><?php echo $row['jam_buka'];?></td>
 				                                    <td><?php echo $row['jam_tutup'];?></td>
 				                                    <td><?php echo $row['deskripsi'];?></td>
-				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
-				                                    </span> Edit</div>
+				                                    <td><a href="tambahMall.php?mode=edit&id=<?php echo $row['id_mall'];?>">
+                                              <div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
+				                                    </span> Edit</div></a>
 				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
 				                                	</span>Delete</div></td>
 				                               </tr>
