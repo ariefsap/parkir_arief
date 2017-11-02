@@ -29,6 +29,6 @@
 					</a></li>
 				</ul>
 			</li>
-			<li><a href="login.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="proses/logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div>

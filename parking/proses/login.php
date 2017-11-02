@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include '../inc/koneksi.php';
 
     $username = $_POST["username"];
@@ -9,12 +10,12 @@
     }
 
     $query = "SELECT * FROM pengguna WHERE username='$username' AND password='$password'";
-    
+
     $sql = mysql_query($query);
     if($sql){
         $row = mysql_fetch_array($sql);
         if (mysql_num_rows($sql) > 0){
-
+            $_SESSION['login'] = true;
             header("location:../index.php");
         } else {
             header("location:../login.php?err=1");
