@@ -65,7 +65,7 @@
 						</div>
 						<div class="panel-body">
 						</div>
-						<table border="1px" class="table">
+						<table class="table table-striped table-bordered">
 				            <thead>
 				                <th>No</th>
 				                <th>Nama Mall</th>

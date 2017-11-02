@@ -62,7 +62,7 @@
 					<div class="panel-heading">
 						Table Pengguna
 					</div>
-					<table border="1px" class="table">
+					<table class="table table-striped table-bordered">
 				            <thead>
 				                <th>No</th>
 				                <th>Nama Pengguna</th>
