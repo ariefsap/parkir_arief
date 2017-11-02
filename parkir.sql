@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12 Okt 2017 pada 08.39
--- Versi Server: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Oct 29, 2017 at 07:04 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `booking`
+-- Table structure for table `booking`
 --
 
 CREATE TABLE `booking` (
@@ -36,16 +38,17 @@ CREATE TABLE `booking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `booking`
+-- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`id_book`, `id_pengguna`, `id_mall`, `id_kendaraan`, `waktu_book`, `status`) VALUES
-(1, 1, 1, 1, '12.00', 1);
+(2, 6, 3, 1, '10.00', 0),
+(3, 6, 3, 1, '10.00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_pengguna`
+-- Table structure for table `jenis_pengguna`
 --
 
 CREATE TABLE `jenis_pengguna` (
@@ -54,7 +57,7 @@ CREATE TABLE `jenis_pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jenis_pengguna`
+-- Dumping data for table `jenis_pengguna`
 --
 
 INSERT INTO `jenis_pengguna` (`id_jenis_pengguna`, `nama_jenis_pengguna`) VALUES
@@ -65,7 +68,7 @@ INSERT INTO `jenis_pengguna` (`id_jenis_pengguna`, `nama_jenis_pengguna`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mall`
+-- Table structure for table `mall`
 --
 
 CREATE TABLE `mall` (
@@ -82,16 +85,24 @@ CREATE TABLE `mall` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mall`
+-- Dumping data for table `mall`
 --
 
 INSERT INTO `mall` (`id_mall`, `nama_mall`, `alamat`, `slot_total`, `slot_terisi`, `biaya`, `jam_buka`, `jam_tutup`, `deskripsi`, `url`) VALUES
-(1, 'rita supermall', 'pwt', 100, 50, '1000', '07.00', '22.00', 'mall bagus', '');
+(1, 'rita supermall', 'pwt', 100, 50, '1000', '07.00', '22.00', 'mall bagus', ''),
+(2, 'telkom mall', 'kota baru', 10, 4, '4000', '10.00', '22.00', 'mall baru', 'satu'),
+(3, 'jcm', 'jogja', 100, 10, '1.000', '09.00', '23.00', 'baru banget', 'qwew'),
+(4, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', ''),
+(5, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', 'asd'),
+(6, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', ''),
+(7, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', ''),
+(8, 'telkom', 'jogj', 100, 10, '1000', '10.00', '21.00', 'hhahah', 'hehe'),
+(9, 'kost', 'pugeran', 50, 0, '1000', '09.00', '10.00', 'kost arief', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mobil_pengguna`
+-- Table structure for table `mobil_pengguna`
 --
 
 CREATE TABLE `mobil_pengguna` (
@@ -103,7 +114,7 @@ CREATE TABLE `mobil_pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mobil_pengguna`
+-- Dumping data for table `mobil_pengguna`
 --
 
 INSERT INTO `mobil_pengguna` (`id_mobil`, `id_pengguna`, `merek`, `warna`, `plat_no`) VALUES
@@ -112,13 +123,14 @@ INSERT INTO `mobil_pengguna` (`id_mobil`, `id_pengguna`, `merek`, `warna`, `plat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengguna`
+-- Table structure for table `pengguna`
 --
 
 CREATE TABLE `pengguna` (
   `id_pengguna` int(11) NOT NULL,
   `nama_pengguna` varchar(50) NOT NULL,
   `alamat` varchar(255) NOT NULL,
+  `no_hp` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `foto` varchar(255) DEFAULT NULL,
@@ -126,12 +138,19 @@ CREATE TABLE `pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pengguna`
+-- Dumping data for table `pengguna`
 --
 
-INSERT INTO `pengguna` (`id_pengguna`, `nama_pengguna`, `alamat`, `username`, `password`, `foto`, `id_jenis_pengguna`) VALUES
-(1, 'anas', 'godean', 'anasbayu', 'anas123', NULL, 1),
-(5, 'nama tes', '', 'tes', '1234', '', 1);
+INSERT INTO `pengguna` (`id_pengguna`, `nama_pengguna`, `alamat`, `no_hp`, `username`, `password`, `foto`, `id_jenis_pengguna`) VALUES
+(1, 'anas', 'godean', 0, 'anasbayu', 'anas123', NULL, 1),
+(5, 'nama tes', '', 0, 'tes', '1234', '', 2),
+(6, 'arief', 'jogja', 2147483647, 'arief123', 'arief123', NULL, 3),
+(7, 'nasir', 'klaten', 2147483647, 'nasiramin', 'nasiramin', NULL, 3),
+(8, 'nasir', 'klaten', 2147483647, 'nasiramin', 'nasiramin', NULL, 3),
+(9, 'nasir', 'k', 0, 'nasiramin', '', NULL, 3),
+(10, 'nasir', 'klaten', 8222, 'nasiramin', 'nasiramin', NULL, 3),
+(12, '', '', 0, '', '', NULL, 3),
+(13, 'arief', 'jakarta', 2147483647, 'ariefsap', 'ariefsap', NULL, 3);
 
 --
 -- Indexes for dumped tables
@@ -180,33 +199,38 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `jenis_pengguna`
 --
 ALTER TABLE `jenis_pengguna`
   MODIFY `id_jenis_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `mall`
 --
 ALTER TABLE `mall`
-  MODIFY `id_mall` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_mall` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `mobil_pengguna`
 --
 ALTER TABLE `mobil_pengguna`
   MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `booking`
+-- Constraints for table `booking`
 --
 ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`id_mall`) REFERENCES `mall` (`id_mall`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -214,16 +238,17 @@ ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_3` FOREIGN KEY (`id_kendaraan`) REFERENCES `mobil_pengguna` (`id_mobil`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `mobil_pengguna`
+-- Constraints for table `mobil_pengguna`
 --
 ALTER TABLE `mobil_pengguna`
   ADD CONSTRAINT `mobil_pengguna_ibfk_1` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id_pengguna`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `pengguna`
+-- Constraints for table `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD CONSTRAINT `pengguna_ibfk_1` FOREIGN KEY (`id_jenis_pengguna`) REFERENCES `jenis_pengguna` (`id_jenis_pengguna`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
