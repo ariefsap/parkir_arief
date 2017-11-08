@@ -127,6 +127,10 @@
 							<label class="col-form-label">Foto Lokasi</label>
 							<input type="file" name="foto" />
 						</div>
+            <div class="form-group">
+							<input type="hidden" name="id_mall" class="form-control"
+                value="<?php echo $idMall;?>"/>
+						</div>
 						<button type="submit" class="btn btn-primary">Simpan</button>
 					</form>
 				</div>
