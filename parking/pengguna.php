@@ -70,7 +70,6 @@
 				                <th>NO. HP</th>
 				                <th>Username</th>
 				                <th>Foto</th>
-				                <th>Aksi</th>
 				            </thead>
 				            <tbody>
 				                <?php
@@ -88,10 +87,6 @@
 				                                    <td><?php echo $row['no_hp'];?></td>
 				                                    <td><?php echo $row['username'];?></td>
 				                                    <td><?php echo $row['foto'];?></td>
-				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
-				                                    </span>Edit</div>
-				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
-				                                	</span>Delete</div></td>
 				                               </tr>
 				                            <?php
 				                                $no++;

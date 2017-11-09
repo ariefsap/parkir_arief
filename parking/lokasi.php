@@ -100,7 +100,8 @@
 				                                    <td><a href="tambahMall.php?mode=edit&id=<?php echo $row['id_mall'];?>">
                                               <div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span> Edit</div></a>
-				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
+				                                    <td><a href="proses/deletemall.php?mode=edit&id=<?php echo $row['id_mall'];?>">
+				                                    <div class="btn btn-danger btn-sm"><a href="proses/deletemall.php?id_mall=<?php echo $row['id_mall']?>" <span class="fa fa-trash">
 				                                	</span>Delete</div></td>
 				                               </tr>
 				                            <?php

@@ -5,6 +5,31 @@
   	if(!$_SESSION['login']){
   		header("location: login.php");
   	}
+  	 if($_GET['mode'] == "edit"){
+      $idPetugas = $_GET['id'];
+      $query = "SELECT * FROM pengguna where id_pengguna = $idPetugas";
+      $sql = mysql_query($query);
+      $data = mysql_fetch_array($sql);
+
+	 
+	  $nama_pengguna = $data ["nama_pengguna"];
+	  $alamat = $data["alamat"];
+	  $no_hp = $data["no_hp"];
+	  $username = $data["username"];
+	  $password = $data["password"];
+      $foto = $data["foto"];
+      $formUrl = "editpetugas.php";
+    }else{
+    	
+      $idPetugas = ""; 
+	  $nama_pengguna = "";
+	  $alamat = "";
+	  $no_hp = "";
+	  $username = "";
+	  $password = "";
+      $foto = "";
+      $formUrl = "tambahpetugas.php";
+    }
 ?>
 <html>
 <head>
@@ -64,31 +89,34 @@
 
 
 					<div class="panel-body">
-					<form action="proses/tambahpetugas.php" method="POST">
+					<form action="proses/<?php echo $formUrl;?>" method="POST">
 
 						<div class="form-group">
 							<label class="col-form-label">Nama Lengkap</label>
-							<input type="text" name="nama_pengguna" placeholder="Nama" class="form-control"/>
+							<input type="text" name="nama_pengguna" value="<?php echo $nama_pengguna;?>" placeholder="Nama" class="form-control"/>
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Alamat</label>
-							<input type="text" name="alamat" placeholder="Alamat" class="form-control"/>
+							<input type="text" name="alamat" value="<?php echo $alamat;?>" placeholder="Alamat" class="form-control"/>
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">No. HP</label>
-							<input type="text" name="no_hp" placeholder="No. HP" class="form-control"/>
+							<input type="text" name="no_hp" value="<?php echo $no_hp;?>" placeholder="No. HP" class="form-control"/>
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Username</label>
-							<input type="text" name="username" placeholder="Username" class="form-control"/>
+							<input type="text" name="username" value="<?php echo $username;?>" placeholder="Username" class="form-control"/>
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Password</label>
-							<input type="text" name="password" placeholder="Password" class="form-control"/>
+							<input type="text" name="password" value="<?php echo $password;?>" placeholder="Password" class="form-control"/>
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Foto</label>
 							<input type="file" name="foto" />
+						</div>
+						 <div class="form-group">
+							<input type="hidden" name="id_petugas" class="form-control" value="<?php echo $idPetugas;?>"/>
 						</div>
 						<button type="submit" class="btn btn-primary btn-sm">Simpan</button>
 					</form>

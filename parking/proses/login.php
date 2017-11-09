@@ -14,7 +14,7 @@
     $sql = mysql_query($query);
     if($sql){
         $row = mysql_fetch_array($sql);
-        if (mysql_num_rows($sql) > 0){
+        if (mysql_num_rows($sql) > 0 && $row["id_jenis_pengguna"] == 1 ){
             $_SESSION['login'] = true;
             header("location:../index.php");
         } else {

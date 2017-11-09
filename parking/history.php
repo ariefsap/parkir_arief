@@ -66,7 +66,7 @@
 					                <th>No</th>
 					                <th>Id Booking</th>
 					                <th>Pengguna</th>
-					                <th>Nama MMall</th>
+					                <th>Nama Mall</th>
 					                <th>Nomor Polisi</th>
 					                <th>Waktu Booking</th>
 					                <th>Status</th>
