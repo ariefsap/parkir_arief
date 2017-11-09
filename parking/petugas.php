@@ -94,7 +94,7 @@
 				                                    <td><?php echo $row['foto'];?></td>
 				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span>Edit</div>
-				                                    <div class="btn btn-danger btn-sm"> <span class="fa fa-trash">
+				                                    <div class="btn btn-danger btn-sm"><a href="proses/deletePetugas.php?id_petugas=<?php echo $row['id_pengguna']?>" <span class="fa fa-trash">
 				                                	</span>Delete</div></td>
 				                               </tr>
 				                            <?php

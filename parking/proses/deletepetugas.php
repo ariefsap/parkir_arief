@@ -1,9 +1,9 @@
 <?php
     include '../inc/koneksi.php';
 
-    $id_pengguna = $_POST["id_pengguna"];
+    $idPengguna = $_GET["id_petugas"];
 
-        $query = mysql_query("DELETE pengguna where id_pengguna = $idPengguna");
+    $query = mysql_query("DELETE FROM pengguna where id_pengguna = '$idPengguna'");
 
     if($query){
          header("location:../petugas.php");
