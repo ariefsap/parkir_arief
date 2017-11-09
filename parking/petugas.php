@@ -92,9 +92,14 @@
 				                                    <td><?php echo $row['no_hp'];?></td>
 				                                    <td><?php echo $row['username'];?></td>
 				                                    <td><?php echo $row['foto'];?></td>
+<<<<<<< HEAD
 				                                     <td><a href="tambahpetugas.php?mode=edit&id=<?php echo $row['id_pengguna'];?>">
                                               <div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span> Edit</div></a>
+=======
+				                                    <td><div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
+				                                    </span>Edit</div>
+>>>>>>> master
 				                                    <div class="btn btn-danger btn-sm"><a href="proses/deletePetugas.php?id_petugas=<?php echo $row['id_pengguna']?>" <span class="fa fa-trash">
 				                                	</span>Delete</div></td>
 				                               </tr>
