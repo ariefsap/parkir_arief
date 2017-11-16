@@ -11,7 +11,7 @@
 	<div class="divider"></div>
 
 			<ul class="nav menu">
-			<li class="active"><a href="index.php"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
+			<li><a href="index.php"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
 			<li><a href="pengguna.php"><em class="fa fa-user">&nbsp;</em> Pengguna</a></li>
 			<li><a href="petugas.php"><em class="fa fa-users">&nbsp;</em> Petugas</a></li>
 			<li><a href="lokasi.php"><em class="fa fa-map-marker">&nbsp;</em> Lokasi</a></li>

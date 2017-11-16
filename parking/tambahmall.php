@@ -13,6 +13,7 @@
       $sql = mysql_query($query);
       $data = mysql_fetch_array($sql);
 
+    
       $namaMall = $data['nama_mall'];
       $alamat = $data['alamat'];
       $slot = $data['slot_total'];
@@ -22,6 +23,7 @@
       $deskripsi = $data['deskripsi'];
       $formUrl = "editMall.php";
     }else{
+    	
       $namaMall = "";
       $alamat = "";
       $slot = "";
@@ -99,6 +101,7 @@
 							<input type="text" name="alamat" placeholder="Alamat" class="form-control"
                 value="<?php echo $alamat;?>"/>
 						</div>
+				
 						<div class="form-group">
 							<label class="col-form-label">Jumlah Slot Parkir</label>
 							<input type="text" name="slot_total" placeholder="Slot Parkir" class="form-control"
