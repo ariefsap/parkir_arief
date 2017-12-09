@@ -21,6 +21,7 @@
         $row = mysql_fetch_array($sql);
         if (mysql_num_rows($sql) > 0){
             $tmpObj->username = $row['username'];
+            $tmpObj->id_pengguna = $row['id_pengguna'];
 
             $response->status = true;
             $response->pesan = "Berhasil login";
