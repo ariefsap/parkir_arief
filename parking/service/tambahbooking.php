@@ -15,8 +15,7 @@
     }
      else {
     $query = mysql_query("INSERT INTO booking (id_pengguna, id_mall , id_kendaraan, waktu_book)
-        
-                        VALUES('$idPengguna', '$idMall', '$idKendaraan', '$waktuBook')");
+                            VALUES('$idPengguna', '$idMall', '$idKendaraan', '$waktuBook')");
 
     if ($query){
         $response = new stdClass();
