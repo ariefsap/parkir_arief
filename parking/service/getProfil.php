@@ -26,6 +26,8 @@
             $tmpObj->alamat = $row['alamat'];
             $tmpObj->foto = $row['foto'];
             $tmpObj->jenis_pengguna = $row['nama_jenis_pengguna'];
+            $tmpObj->no_hp = $row['no_hp'];
+            $tmpObj->url = $row['foto'];
 
             $response->status = true;
             $response->pesan = "Berhasil login";

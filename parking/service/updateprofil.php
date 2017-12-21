@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     include "../inc/koneksi.php";
 
 	$idPengguna = $_POST['id_pengguna'];
@@ -6,13 +7,14 @@
     $alamat = $_POST['alamat'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $noHp = $_POST['no_hp'];
 
     $response= new stdClass();
     $tmpObj = new stdClass();
-    
-    
-    $queryUpdate = mysql_query("UPDATE pengguna set nama_pengguna = '$nama_pengguna', alamat = '$alamat', 
-                                username = '$username', password = '$password' WHERE  id_pengguna = '$idPengguna'");
+
+    $queryUpdate = mysql_query("UPDATE pengguna set nama_pengguna = '$nama_pengguna', alamat = '$alamat',
+                                username = '$username', password = '$password', no_hp = '$noHp'
+                                WHERE  id_pengguna = '$idPengguna'");
 
     if ($queryUpdate)	{
         $response->status = true;
@@ -21,7 +23,7 @@
     }else{
         $response->status = false;
         $response->pesan = "Update Gagal";
-        $response->data = $tmpObj;  
+        $response->data = $tmpObj;
     }
 
 	echo json_encode($response);
