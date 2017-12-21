@@ -27,9 +27,11 @@
                 array_push($tmpArr, $tmpObjLoop);
             }
 
+            $tmpObj->list = $tmpArr;
+
             $response->status = true;
             $response->pesan = "Berhasil mengambil data";
-            $response->data = $tmpArr;
+            $response->data = $tmpObj;
 
             echo json_encode($response);
         } else {
