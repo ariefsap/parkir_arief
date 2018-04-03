@@ -89,7 +89,7 @@
 
 
 					<div class="panel-body">
-					<form action="proses/<?php echo $formUrl;?>" method="POST">
+					<form action="proses/<?php echo $formUrl;?>" method="POST" enctype="multipart/form-data">
 
 						<div class="form-group">
 							<label class="col-form-label">Nama Lengkap</label>
@@ -113,7 +113,7 @@
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Foto</label>
-							<input type="file" name="foto" />
+							<input type="file" name="foto">
 						</div>
 						 <div class="form-group">
 							<input type="hidden" name="id_petugas" class="form-control" value="<?php echo $idPetugas;?>"/>

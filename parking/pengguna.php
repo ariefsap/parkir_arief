@@ -86,7 +86,9 @@
 				                                    <td><?php echo $row['alamat'];?></td>
 				                                    <td><?php echo $row['no_hp'];?></td>
 				                                    <td><?php echo $row['username'];?></td>
-				                                    <td><?php echo $row['foto'];?></td>
+				                                  
+
+				                                    <td><img src="upload_foto/foto_pengguna/<?php echo $row['foto'];?>" width="100" height="100"/></td>
 				                               </tr>
 				                            <?php
 				                                $no++;

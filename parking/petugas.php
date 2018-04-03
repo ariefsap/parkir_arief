@@ -34,8 +34,6 @@
 				<a class="navbar-brand" href="#"><span>Parking</span>Solution</a>
 		</div><!-- /.container-fluid -->
 
-
-
 	</nav>
 	<?php
 			include "inc/menu.php";
@@ -91,8 +89,8 @@
 				                                    <td><?php echo $row['alamat'];?></td>
 				                                    <td><?php echo $row['no_hp'];?></td>
 				                                    <td><?php echo $row['username'];?></td>
-				                                    <td><?php echo $row['foto'];?></td>
-
+				                                    <td><img src="upload_foto/foto_pengguna/<?php echo $row['foto'];?>" width="100" height="100"/></td>
+				                                   
 				                                    <td><a href="tambahpetugas.php?mode=edit&id=<?php echo $row['id_pengguna'];?>">
                                               		<div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span> Edit</div></a>

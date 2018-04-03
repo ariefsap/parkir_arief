@@ -9,7 +9,14 @@
     $jam_buka = $_POST["jam_buka"];
     $jam_tutup = $_POST["jam_tutup"];
     $deskripsi = $_POST["deskripsi"];
-    $url = $_POST["url"];
+    $url = $_FILES['url']['name'];
+
+    if (strlen($url)>0) {
+        if(is_uploaded_file($_FILES['url']['tmp_name'])){
+            move_uploaded_file($_FILES['url']['tmp_name'], "../upload_foto/".$url);
+        }
+        # code...
+    }
 
     if (empty($nama_mall) || empty($alamat) || empty($slot_total) || empty($slot_terisi) || empty($biaya) ||
         empty($jam_buka) || empty($jam_tutup) || empty($deskripsi) || empty($url)) {

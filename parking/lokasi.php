@@ -76,6 +76,7 @@
 				                <th>Jam Buka</th>
 				                <th>Jam Tutup</th>
 				                <th>Deskripsi</th>
+				                <th>Foto</th>
 				                <th>Aksi</th>
 				            </thead>
 				            <tbody>
@@ -97,6 +98,7 @@
 				                                    <td><?php echo $row['jam_buka'];?></td>
 				                                    <td><?php echo $row['jam_tutup'];?></td>
 				                                    <td><?php echo $row['deskripsi'];?></td>
+				                                    <td><img src="upload_foto/<?php echo $row['url'];?>" width="100" height="100"/></td>
 				                                    <td><a href="tambahMall.php?mode=edit&id=<?php echo $row['id_mall'];?>">
                                               <div class="btn btn-success btn-sm"> <span class="fa fa-pencil-square-o">
 				                                    </span> Edit</div></a>

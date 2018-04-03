@@ -48,13 +48,14 @@
         $response->pesan = "Konfirmasi password tidak sama";
         $response->data = new stdClass();
     } else {
-        if (!empty($username) && ($password == $confirmPassword) && !empty($alamat)){
+        // if (!empty($username) && ($password == $confirmPassword))
             $query = mysql_query("INSERT INTO pengguna (nama_pengguna, alamat,
                                 username, password, foto, id_jenis_pengguna, no_hp)
                                 VALUES('$namaPengguna', '$alamat', '$username',
                                     '$password', '$foto', '$idJenisPengguna', '$hp')");
 
             if ($query){
+                // $queryId=mysql_insert_id();
                 $queryId = mysql_query("SELECT MAX(id_pengguna) FROM pengguna");
                 $tmp = mysql_fetch_array($queryId);
                 $idPengguna = $tmp[0];
@@ -62,7 +63,7 @@
                 $queryKendaraan = mysql_query("INSERT INTO mobil_pengguna (id_pengguna, merek,
                                     warna, plat_no)
                                     VALUES('$idPengguna', '$merk', '$warna',
-                                        '$plat'");
+                                        '$plat')");
 
 
                 $response = new stdClass();
@@ -75,7 +76,7 @@
                 $response->pesan = "Terjadi kesalahan";
                 $response->data = new stdClass();
             }
-        }
+        
     }
     echo json_encode($response);
 

@@ -21,7 +21,7 @@
     if($sql){
         $row = mysql_fetch_array($sql);
         if (mysql_num_rows($sql) > 0){
-            $tmpObj->nama = $row['nama_pengguna'];
+            $tmpObj->nama_pengguna = $row['nama_pengguna'];
             $tmpObj->username = $row['username'];
             $tmpObj->alamat = $row['alamat'];
             $tmpObj->foto = $row['foto'];

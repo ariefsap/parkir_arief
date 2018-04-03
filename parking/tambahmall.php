@@ -21,6 +21,7 @@
       $jamBuka = $data['jam_buka'];
       $jamTutup = $data['jam_tutup'];
       $deskripsi = $data['deskripsi'];
+      $url= $data['url'];
       $formUrl = "editMall.php";
     }else{
     	
@@ -31,6 +32,7 @@
       $jamBuka = "";
       $jamTutup = "";
       $deskripsi = "";
+      $url = "";
       $formUrl = "tambahMall.php";
     }
 ?>
@@ -90,7 +92,7 @@
 				<div class="panel panel-default">
 
 					<div class="panel-body">
-					<form action="proses/<?php echo $formUrl;?>" method="POST">
+					<form action="proses/<?php echo $formUrl;?>" method="POST" enctype="multipart/form-data">
 						<div class="form-group">
 							<label class="col-form-label">Nama Lokasi</label>
 							<input type="text" name="nama_mall" placeholder="Nama Lokasi" class="form-control"
@@ -128,7 +130,7 @@
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Foto Lokasi</label>
-							<input type="file" name="foto" />
+							<input type="file" name="url">
 						</div>
             <div class="form-group">
 							<input type="hidden" name="id_mall" class="form-control"
