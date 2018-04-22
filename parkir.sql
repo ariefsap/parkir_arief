@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2017 at 07:04 PM
+-- Generation Time: Apr 22, 2018 at 06:24 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -42,8 +42,9 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id_book`, `id_pengguna`, `id_mall`, `id_kendaraan`, `waktu_book`, `status`) VALUES
-(2, 6, 3, 1, '10.00', 0),
-(3, 6, 3, 1, '10.00', 0);
+(1, 22, 53, 2, '19.00', 1),
+(35, 22, 52, 2, '10.00', 0),
+(36, 22, 54, 2, '09.00', 0);
 
 -- --------------------------------------------------------
 
@@ -89,15 +90,9 @@ CREATE TABLE `mall` (
 --
 
 INSERT INTO `mall` (`id_mall`, `nama_mall`, `alamat`, `slot_total`, `slot_terisi`, `biaya`, `jam_buka`, `jam_tutup`, `deskripsi`, `url`) VALUES
-(1, 'rita supermall', 'pwt', 100, 50, '1000', '07.00', '22.00', 'mall bagus', ''),
-(2, 'telkom mall', 'kota baru', 10, 4, '4000', '10.00', '22.00', 'mall baru', 'satu'),
-(3, 'jcm', 'jogja', 100, 10, '1.000', '09.00', '23.00', 'baru banget', 'qwew'),
-(4, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', ''),
-(5, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', 'asd'),
-(6, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', ''),
-(7, 'telkomm', 'jogja', 1000, 50, '5000', '09.00', '10.00', 'mall coba', ''),
-(8, 'telkom', 'jogj', 100, 10, '1000', '10.00', '21.00', 'hhahah', 'hehe'),
-(9, 'kost', 'pugeran', 50, 0, '1000', '09.00', '10.00', 'kost arief', '');
+(52, 'Hartono Mall', 'Jl. Ringroad Utara', 140, 0, '1000', '10.00', '22.00', 'Mall Baru', 'hartono.jpg'),
+(53, 'Ambarukmo Plaza', 'Jl. Laksda Adisucipto No.80, Yogyakarta', 200, 0, '2000', '10.00', '23.00', 'Mall Lawas', 'amplas.jpg'),
+(54, 'Jogja CIty Mall', 'Jalan Magelang KM.6 No.18, Yogyakarta', 200, 0, '2000', '09.00', '23.00', 'Mall Baru', 'jcm.jpg');
 
 -- --------------------------------------------------------
 
@@ -118,7 +113,8 @@ CREATE TABLE `mobil_pengguna` (
 --
 
 INSERT INTO `mobil_pengguna` (`id_mobil`, `id_pengguna`, `merek`, `warna`, `plat_no`) VALUES
-(1, 1, 'Toyota', 'Hitam', 'R 2112 A');
+(1, 1, 'Toyota', 'Hitam', 'R 2112 A'),
+(2, 22, 'toyota avanza', 'merah', 'ab 1 boy');
 
 -- --------------------------------------------------------
 
@@ -130,10 +126,10 @@ CREATE TABLE `pengguna` (
   `id_pengguna` int(11) NOT NULL,
   `nama_pengguna` varchar(50) NOT NULL,
   `alamat` varchar(255) NOT NULL,
-  `no_hp` int(11) NOT NULL,
+  `no_hp` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `foto` varchar(255) DEFAULT NULL,
+  `foto` varchar(255) NOT NULL,
   `id_jenis_pengguna` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -142,15 +138,41 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `nama_pengguna`, `alamat`, `no_hp`, `username`, `password`, `foto`, `id_jenis_pengguna`) VALUES
-(1, 'anas', 'godean', 0, 'anasbayu', 'anas123', NULL, 1),
-(5, 'nama tes', '', 0, 'tes', '1234', '', 2),
-(6, 'arief', 'jogja', 2147483647, 'arief123', 'arief123', NULL, 3),
-(7, 'nasir', 'klaten', 2147483647, 'nasiramin', 'nasiramin', NULL, 3),
-(8, 'nasir', 'klaten', 2147483647, 'nasiramin', 'nasiramin', NULL, 3),
-(9, 'nasir', 'k', 0, 'nasiramin', '', NULL, 3),
-(10, 'nasir', 'klaten', 8222, 'nasiramin', 'nasiramin', NULL, 3),
-(12, '', '', 0, '', '', NULL, 3),
-(13, 'arief', 'jakarta', 2147483647, 'ariefsap', 'ariefsap', NULL, 3);
+(1, 'anas', 'godean', '0', 'anasbayu', 'anas123', '', 1),
+(22, 'boy', 'pugeran', '082225096542', 'boy', 'boy', 'fzn.jpg', 2),
+(42, 'Luthfi Farhan', 'Bekasi', '085262511425', 'luthfi', 'luthfi', 'kutil.jpg', 3),
+(44, 'Wahyu Septyanto', 'Jambi', '02933919211', 'Wahyu', 'wahyu', 'wahyu.jpg', 3),
+(45, 'Deppi Boy', 'Seturan', '038327616122', 'boy', 'boy', 'boyy.jpg', 3),
+(48, 'arief', 'jakata', '082225096541', 'arief', 'arief', '', 1),
+(55, 'Redys Vita', 'Godean', '08222789361', 'redys', 'redys', 'redys.jpg', 2),
+(56, 'tes', 'tes', '223456789', 'tes', 'tes', '2018_03_25_08_03_31pmsitebg.jpg', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slot_parkir`
+--
+
+CREATE TABLE `slot_parkir` (
+  `id_slot` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `slot_parkir`
+--
+
+INSERT INTO `slot_parkir` (`id_slot`, `status`) VALUES
+(1, ''),
+(2, ''),
+(3, ''),
+(4, ''),
+(5, ''),
+(6, ''),
+(7, ''),
+(8, ''),
+(9, ''),
+(10, '');
 
 --
 -- Indexes for dumped tables
@@ -192,6 +214,12 @@ ALTER TABLE `pengguna`
   ADD KEY `id_jenis_pengguna` (`id_jenis_pengguna`);
 
 --
+-- Indexes for table `slot_parkir`
+--
+ALTER TABLE `slot_parkir`
+  ADD PRIMARY KEY (`id_slot`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -199,7 +227,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `jenis_pengguna`
@@ -211,19 +239,19 @@ ALTER TABLE `jenis_pengguna`
 -- AUTO_INCREMENT for table `mall`
 --
 ALTER TABLE `mall`
-  MODIFY `id_mall` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_mall` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `mobil_pengguna`
 --
 ALTER TABLE `mobil_pengguna`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Constraints for dumped tables
